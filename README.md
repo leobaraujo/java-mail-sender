@@ -21,17 +21,6 @@ A API permite que o usuário envie emails de forma simplificada.
 
 ## Execução
 
-> Altere as seguintes propriedades para corresponder com o seu servidor SMTP.
-
-```
-spring.mail.host=
-spring.mail.port=
-spring.mail.username=
-spring.mail.password=
-# spring.mail.properties.mail.smtp.auth=true
-# spring.mail.properties.mail.smtp.starttls.enable=true
-```
-
 ### Git
 
 > Requisitos: Git e Java 17
@@ -46,6 +35,8 @@ cd java-mail-sender
 # Instalar dependências
 mvn clean install
 
+# ATENÇÂO: A partir desde ponto é preciso que tenha configurado o arquivo application.properties
+
 # Build
 mvn clean compile package
 
@@ -53,6 +44,19 @@ mvn clean compile package
 mvn mvn exec:java -D"exec.mainClass"="com.example.mailsender.MailsenderApplication"
 
 # Afim de parar a aplicação pressione a tecla CTRL+C no console
+```
+
+### Configurando arquivo _application.properties_
+
+> Altere as seguintes propriedades no arquivo _application.properties_ para corresponder com o seu servidor SMTP.
+
+```
+spring.mail.host=
+spring.mail.port=
+spring.mail.username=
+spring.mail.password=
+# spring.mail.properties.mail.smtp.auth=true
+# spring.mail.properties.mail.smtp.starttls.enable=true
 ```
 
 ## Endpoints
